@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flip Streak Privacy Policy</title>
+<meta name="description" content="How the Flip Streak memory game handles your information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #BFE6DF; --shade: #9CC4BC; --light: #E4FFFB;
+    --ink: #1F5A55; --ink-soft: #3E6F69;
+    --coral: #E8574A; --coral-deep: #C2402F; --coral-shade: #B8402F;
+    --honey: #F2B544; --honey-shade: #C08419; --cream: #FFF8EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1D3330; --shade: #142422; --light: #29463F;
+      --ink: #DDF3EE; --ink-soft: #A9CCC5;
+      --coral: #F07062; --coral-deep: #FF9184;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 500 17px/1.6 "Fredoka", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 56px; }
+  a { color: var(--coral-deep); font-weight: 600; overflow-wrap: anywhere; }
+  @media (prefers-color-scheme: dark) { a { color: var(--coral-deep); } }
+
+  /* Soft (neumorphic) surfaces, as in the game */
+  .raised {
+    background: var(--bg); border-radius: 28px;
+    box-shadow: 8px 8px 18px var(--shade), -8px -8px 18px var(--light);
+  }
+  .inset {
+    background: var(--bg); border-radius: 22px;
+    box-shadow: inset 4px 4px 9px var(--shade), inset -4px -4px 9px var(--light);
+  }
+
+  /* Header: mascot card and the two-tone logo */
+  header { text-align: center; padding: 8px 0 26px; }
+  .mascot {
+    width: 74px; height: 96px; margin: 0 auto 14px; position: relative;
+    background: linear-gradient(160deg, #FBF4EA, #ECE3D6); border-radius: 18px;
+    transform: rotate(-7deg);
+    box-shadow: 6px 8px 16px var(--shade), -5px -5px 12px var(--light);
+  }
+  .mascot::before { /* heart */
+    content: ""; position: absolute; left: 10px; top: 10px; width: 14px; height: 13px;
+    background: var(--coral);
+    clip-path: path("M7 13 C7 13 0 8.5 0 4 C0 1.8 1.8 0 4 0 C5.3 0 6.4 .7 7 1.7 C7.6 .7 8.7 0 10 0 C12.2 0 14 1.8 14 4 C14 8.5 7 13 7 13 Z");
+  }
+  .mascot i { position: absolute; width: 7px; height: 9px; border-radius: 50%; background: #1E3A37; top: 38px; }
+  .mascot i:nth-child(1) { left: 24px; } .mascot i:nth-child(2) { left: 43px; top: 36px; }
+  .mascot b { /* smile */
+    position: absolute; left: 27px; top: 52px; width: 20px; height: 10px;
+    background: #1E3A37; border-radius: 3px 3px 12px 12px;
+  }
+  .mascot u { position: absolute; top: 58px; width: 11px; height: 6px; border-radius: 6px; background: #F6B7BD; }
+  .mascot u:nth-of-type(1) { left: 12px; } .mascot u:nth-of-type(2) { left: 52px; top: 56px; }
+  .logo { margin: 0; line-height: .95; font-weight: 700; letter-spacing: .5px; }
+  .logo span { display: block; }
+  .logo .flip { font-size: 56px; color: var(--coral); text-shadow: 0 5px 0 var(--coral-shade), 0 10px 14px rgba(0,0,0,.12); }
+  .logo .streak { font-size: 50px; color: var(--honey); text-shadow: 0 5px 0 var(--honey-shade), 0 10px 14px rgba(0,0,0,.12); }
+  .doc-title {
+    display: inline-block; margin-top: 22px; padding: 8px 22px;
+    font-size: 22px; font-weight: 700;
+  }
+  .meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+  .meta li { padding: 6px 14px; font-size: 14px; color: var(--ink-soft); border-radius: 999px; }
+  .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Summary */
+  .summary { padding: 22px 22px 8px; margin-bottom: 26px; }
+  .summary h2 { margin: 0 0 12px; font-size: 21px; }
+  .points { list-style: none; margin: 0; padding: 0; }
+  .points li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+  .well {
+    flex: none; width: 46px; height: 46px; border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: inset 3px 3px 7px var(--shade), inset -3px -3px 7px var(--light);
+  }
+  .well svg { width: 22px; height: 22px; fill: var(--coral); }
+  .points p { margin: 9px 0 0; }
+
+  /* Sections */
+  section { padding: 22px 22px 10px; margin-bottom: 22px; }
+  section h2 { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; font-size: 21px; line-height: 1.3; }
+  .num {
+    flex: none; width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 15px; color: #fff;
+    background: linear-gradient(135deg, #EF7E70, var(--coral));
+    box-shadow: 2px 3px 6px var(--shade);
+  }
+  h3 { font-size: 17px; margin: 16px 0 4px; }
+  p, li { color: var(--ink); }
+  section ul { padding-left: 1.2rem; margin: 6px 0 12px; }
+  section li { margin: 4px 0; }
+  .muted { color: var(--ink-soft); }
+  .note { padding: 12px 16px; margin: 10px 0 14px; font-size: 16px; }
+
+  footer { text-align: center; margin-top: 34px; }
+  .btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .btn {
+    display: inline-block; padding: 12px 24px; border-radius: 999px; text-decoration: none;
+    font-weight: 600; color: var(--ink); background: var(--bg);
+    box-shadow: 5px 5px 12px var(--shade), -5px -5px 12px var(--light);
+  }
+  .btn.primary { color: #fff; background: linear-gradient(135deg, #EF7E70, var(--coral) 60%, var(--coral-deep)); }
+  footer p { font-size: 14px; color: var(--ink-soft); margin-top: 22px; }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .logo .flip { font-size: 46px; } .logo .streak { font-size: 41px; }
+    section, .summary { padding: 18px 16px 6px; border-radius: 24px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mascot" aria-hidden="true"><i></i><i></i><b></b><u></u><u></u></div>
+    <h1 class="logo" aria-label="Flip Streak"><span class="flip">FLIP</span><span class="streak">STREAK</span></h1>
+    <div class="doc-title raised">Privacy Policy</div>
+    <ul class="meta">
+      <li class="inset"><strong>Developer:</strong> ASIANUT</li>
+      <li class="inset"><strong>Effective:</strong> 18 November 2026</li>
+      <li class="inset"><strong>Contact:</strong> <a href="mailto:okellodeveloper@gmail.com">okellodeveloper@gmail.com</a></li>
+    </ul>
+  </header>
+
+  <div class="summary raised">
+    <h2>In short</h2>
+    <ul class="points">
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 1H7a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm0 18H7V5h10v14Z"/></svg></span>
+        <p>Solo play needs no account. Your levels, stars, coins and settings stay on your phone.</p></li>
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13Zm8 0c-.3 0-.6 0-1 .1 1.2.8 2 2 2 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5Z"/></svg></span>
+        <p>Playing with friends is optional and uses Google sign-in. Only your first name and your score are shown to others in your room.</p></li>
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2 14.5v-9l6 4.5-6 4.5Z"/></svg></span>
+        <p>Ads are short videos you choose to watch for a reward. They come from Google AdMob.</p></li>
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Zm-1.6 15L6.5 12l1.4-1.4 2.5 2.5 5.7-5.7 1.4 1.4-7.1 7.2Z"/></svg></span>
+        <p>We don't sell your information, and coins are never real money.</p></li>
+    </ul>
+  </div>
+
+  <section class="raised">
+    <h2><span class="num">1</span>Who we are</h2>
+    <p>Flip Streak is a pairs memory game for Android made by ASIANUT (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy explains what information the game uses, why, and the choices you have. It applies to the Flip Streak app and to this page.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">2</span>Playing on your own</h2>
+    <p>You don't need an account to play the levels. The game saves the following <strong>only on your phone</strong>:</p>
+    <ul>
+      <li>your level records, stars, best scores, times and day streak;</li>
+      <li>your coins, and any Peeks and Hints you have collected;</li>
+      <li>the player name and avatar you choose in the game;</li>
+      <li>your settings, such as sound, vibration, dark mode and reduce motion;</li>
+      <li>a game you left part-way, so you can carry on later;</li>
+      <li>a skill estimate the game works out from how you play, used only to make the next levels easier or harder. It is calculated on your phone and never sent to us.</li>
+    </ul>
+    <p>We cannot see any of this. It is removed if you use <em>Reset progress</em> in Settings, clear the app's storage, or uninstall the game.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">3</span>Playing with friends</h2>
+    <p>Rooms for 2 to 6 players are optional. To use them you sign in with your Google account. We use <strong>Firebase</strong>, a Google service, to run rooms.</p>
+    <h3>What we receive</h3>
+    <ul>
+      <li><strong>From Google sign-in (Firebase Authentication):</strong> your Google account name, email address, profile picture and a user ID. These create your Flip Streak player account.</li>
+      <li><strong>In a room (Cloud Firestore and Cloud Functions):</strong> the display name you play under (your first name by default, and you can change it), your user ID, the room code, your moves and turns, and scores and results.</li>
+    </ul>
+    <h3>Who can see it</h3>
+    <p>Other players in your room see your display name, whose turn it is, the cards that are flipped and the scores. They do not see your email address. Rooms can only be read by the players in them.</p>
+    <h3>Where it is kept</h3>
+    <p>Room data is processed and stored by Google Cloud in the <strong>europe-west1</strong> region (Belgium). Google's handling is covered by the <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy information</a>. When the last player leaves a room, the room and its data are deleted.</p>
+    <h3>Why</h3>
+    <p>We use this information only to run multiplayer games, keep turns fair and show results.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">4</span>Ads</h2>
+    <p>Flip Streak shows <strong>rewarded video ads</strong> from <strong>Google AdMob</strong>, and only when you choose to watch one: to refill an empty Peek or Hint, to double the coins from a level, or to collect the free daily pack. There are no banner ads, and no ads play on their own while you play.</p>
+    <p>When an ad is requested or shown, Google may collect and use information such as your device's advertising ID, IP address, device and app information, and how you interact with the ad. Google uses this to show ads, measure them, prevent fraud and, if you allow it, personalise them. Learn more in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from apps that use its services</a>.</p>
+    <h3>Your choices</h3>
+    <ul>
+      <li>Where the law requires it (for example in the EEA, the UK and Switzerland), the game asks for your consent before personalised ads, using Google's consent form. You can change your answer at any time in <strong>Settings &rarr; Ad privacy choices</strong>.</li>
+      <li>On Android you can reset or delete your advertising ID in your phone's <strong>Settings &rarr; Privacy &rarr; Ads</strong> (the wording varies by phone).</li>
+      <li>You never have to watch an ad. Every reward can be skipped with &ldquo;No thanks&rdquo;.</li>
+    </ul>
+    <p class="inset note">If we add other ad networks through AdMob, we will name them on this page first.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">5</span>Coins, Peeks and Hints</h2>
+    <p>Coins are earned by winning stars and watching optional ads, and are spent in the in-game store on Peeks and Hints. They are virtual items with no money value. The game does not sell anything for real money, and we do not collect payment details.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">6</span>Permissions</h2>
+    <ul>
+      <li><strong>Internet access:</strong> for rooms with friends, Google sign-in and ads. Solo play works offline.</li>
+      <li><strong>Advertising ID:</strong> used by Google AdMob as described above.</li>
+    </ul>
+    <p>The game does not use your camera, microphone, contacts, photos or location.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">7</span>What we don't do</h2>
+    <ul>
+      <li>We don't sell or rent your personal information.</li>
+      <li>We don't use analytics or tracking tools of our own.</li>
+      <li>We don't read your Google contacts, Gmail or Drive.</li>
+      <li>We don't show your email address to other players.</li>
+    </ul>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">8</span>Keeping and deleting your information</h2>
+    <ul>
+      <li><strong>On your phone:</strong> kept until you reset progress, clear the app's storage or uninstall.</li>
+      <li><strong>Rooms:</strong> deleted when the last player leaves.</li>
+      <li><strong>Your player account:</strong> kept while you use rooms. You can sign out at any time from the Friends screen.</li>
+    </ul>
+    <h3>Delete your account</h3>
+    <p>Email <a href="mailto:okellodeveloper@gmail.com?subject=Delete%20my%20Flip%20Streak%20account">okellodeveloper@gmail.com</a> from the Google address you signed in with, with the subject &ldquo;Delete my Flip Streak account&rdquo;. We will delete your player account and any room data linked to it within 30 days and confirm by email. Information Google AdMob holds is managed by Google and your Google account settings.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">9</span>Security</h2>
+    <p>Information sent between the game and Firebase is encrypted in transit. Room data can only be changed through our server code, which checks every move, and the hidden board is never readable by anyone's phone. No system is perfectly secure, but we work to protect your information.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">10</span>Children</h2>
+    <p>Flip Streak is meant for players aged 13 and over and is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has signed in to play with friends, contact us and we will delete their account.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">11</span>Your rights</h2>
+    <p>Depending on where you live, you may have the right to access, correct, delete or get a copy of your personal information, to object to or restrict how it is used, and to withdraw consent. To use these rights, email us. If you are in the EEA or the UK, you may also complain to your local data protection authority.</p>
+    <p class="muted">For players in the EEA and the UK, we rely on: providing the service you ask for (to run rooms), your consent (for personalised ads), and our legitimate interest in keeping the game working and secure.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">12</span>Changes to this policy</h2>
+    <p>We may update this policy when the game changes or the law requires it. We will post the new version on this page and change the effective date. If a change is important, we will also tell you in the game.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">13</span>Contact</h2>
+    <p>Questions or requests: <a href="mailto:okellodeveloper@gmail.com">okellodeveloper@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <div class="btns">
+      <a class="btn primary" href="flip-streak-terms-of-service.html">Terms of Service</a>
+      <a class="btn" href="index.html">ASIANUT apps</a>
+    </div>
+    <p>&copy; 2026 ASIANUT &middot; Flip Streak</p>
+  </footer>
+</main>
+</body>
+</html>
