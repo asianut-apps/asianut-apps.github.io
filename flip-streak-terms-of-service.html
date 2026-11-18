@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flip Streak Terms of Service</title>
+<meta name="description" content="The terms for playing the Flip Streak memory game.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #BFE6DF; --shade: #9CC4BC; --light: #E4FFFB;
+    --ink: #1F5A55; --ink-soft: #3E6F69;
+    --coral: #E8574A; --coral-deep: #C2402F; --coral-shade: #B8402F;
+    --honey: #F2B544; --honey-shade: #C08419; --cream: #FFF8EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1D3330; --shade: #142422; --light: #29463F;
+      --ink: #DDF3EE; --ink-soft: #A9CCC5;
+      --coral: #F07062; --coral-deep: #FF9184;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 500 17px/1.6 "Fredoka", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 56px; }
+  a { color: var(--coral-deep); font-weight: 600; overflow-wrap: anywhere; }
+  @media (prefers-color-scheme: dark) { a { color: var(--coral-deep); } }
+
+  /* Soft (neumorphic) surfaces, as in the game */
+  .raised {
+    background: var(--bg); border-radius: 28px;
+    box-shadow: 8px 8px 18px var(--shade), -8px -8px 18px var(--light);
+  }
+  .inset {
+    background: var(--bg); border-radius: 22px;
+    box-shadow: inset 4px 4px 9px var(--shade), inset -4px -4px 9px var(--light);
+  }
+
+  /* Header: mascot card and the two-tone logo */
+  header { text-align: center; padding: 8px 0 26px; }
+  .mascot {
+    width: 74px; height: 96px; margin: 0 auto 14px; position: relative;
+    background: linear-gradient(160deg, #FBF4EA, #ECE3D6); border-radius: 18px;
+    transform: rotate(-7deg);
+    box-shadow: 6px 8px 16px var(--shade), -5px -5px 12px var(--light);
+  }
+  .mascot::before { /* heart */
+    content: ""; position: absolute; left: 10px; top: 10px; width: 14px; height: 13px;
+    background: var(--coral);
+    clip-path: path("M7 13 C7 13 0 8.5 0 4 C0 1.8 1.8 0 4 0 C5.3 0 6.4 .7 7 1.7 C7.6 .7 8.7 0 10 0 C12.2 0 14 1.8 14 4 C14 8.5 7 13 7 13 Z");
+  }
+  .mascot i { position: absolute; width: 7px; height: 9px; border-radius: 50%; background: #1E3A37; top: 38px; }
+  .mascot i:nth-child(1) { left: 24px; } .mascot i:nth-child(2) { left: 43px; top: 36px; }
+  .mascot b { /* smile */
+    position: absolute; left: 27px; top: 52px; width: 20px; height: 10px;
+    background: #1E3A37; border-radius: 3px 3px 12px 12px;
+  }
+  .mascot u { position: absolute; top: 58px; width: 11px; height: 6px; border-radius: 6px; background: #F6B7BD; }
+  .mascot u:nth-of-type(1) { left: 12px; } .mascot u:nth-of-type(2) { left: 52px; top: 56px; }
+  .logo { margin: 0; line-height: .95; font-weight: 700; letter-spacing: .5px; }
+  .logo span { display: block; }
+  .logo .flip { font-size: 56px; color: var(--coral); text-shadow: 0 5px 0 var(--coral-shade), 0 10px 14px rgba(0,0,0,.12); }
+  .logo .streak { font-size: 50px; color: var(--honey); text-shadow: 0 5px 0 var(--honey-shade), 0 10px 14px rgba(0,0,0,.12); }
+  .doc-title {
+    display: inline-block; margin-top: 22px; padding: 8px 22px;
+    font-size: 22px; font-weight: 700;
+  }
+  .meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+  .meta li { padding: 6px 14px; font-size: 14px; color: var(--ink-soft); border-radius: 999px; }
+  .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Summary */
+  .summary { padding: 22px 22px 8px; margin-bottom: 26px; }
+  .summary h2 { margin: 0 0 12px; font-size: 21px; }
+  .points { list-style: none; margin: 0; padding: 0; }
+  .points li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+  .well {
+    flex: none; width: 46px; height: 46px; border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: inset 3px 3px 7px var(--shade), inset -3px -3px 7px var(--light);
+  }
+  .well svg { width: 22px; height: 22px; fill: var(--coral); }
+  .points p { margin: 9px 0 0; }
+
+  /* Sections */
+  section { padding: 22px 22px 10px; margin-bottom: 22px; }
+  section h2 { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; font-size: 21px; line-height: 1.3; }
+  .num {
+    flex: none; width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 15px; color: #fff;
+    background: linear-gradient(135deg, #EF7E70, var(--coral));
+    box-shadow: 2px 3px 6px var(--shade);
+  }
+  h3 { font-size: 17px; margin: 16px 0 4px; }
+  p, li { color: var(--ink); }
+  section ul { padding-left: 1.2rem; margin: 6px 0 12px; }
+  section li { margin: 4px 0; }
+  .muted { color: var(--ink-soft); }
+  .note { padding: 12px 16px; margin: 10px 0 14px; font-size: 16px; }
+
+  footer { text-align: center; margin-top: 34px; }
+  .btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .btn {
+    display: inline-block; padding: 12px 24px; border-radius: 999px; text-decoration: none;
+    font-weight: 600; color: var(--ink); background: var(--bg);
+    box-shadow: 5px 5px 12px var(--shade), -5px -5px 12px var(--light);
+  }
+  .btn.primary { color: #fff; background: linear-gradient(135deg, #EF7E70, var(--coral) 60%, var(--coral-deep)); }
+  footer p { font-size: 14px; color: var(--ink-soft); margin-top: 22px; }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .logo .flip { font-size: 46px; } .logo .streak { font-size: 41px; }
+    section, .summary { padding: 18px 16px 6px; border-radius: 24px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mascot" aria-hidden="true"><i></i><i></i><b></b><u></u><u></u></div>
+    <h1 class="logo" aria-label="Flip Streak"><span class="flip">FLIP</span><span class="streak">STREAK</span></h1>
+    <div class="doc-title raised">Terms of Service</div>
+    <ul class="meta">
+      <li class="inset"><strong>Publisher:</strong> ASIANUT</li>
+      <li class="inset"><strong>Effective:</strong> 18 November 2026</li>
+      <li class="inset"><strong>Contact:</strong> <a href="mailto:okellodeveloper@gmail.com">okellodeveloper@gmail.com</a></li>
+    </ul>
+  </header>
+
+  <div class="summary raised">
+    <h2>In short</h2>
+    <ul class="points">
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7L22 9.2l-7.2-.6L12 2 9.2 8.6 2 9.2 7.4 14l-1.6 7z"/></svg></span>
+        <p>Flip Streak is free to play. Have fun, play fair and be kind in rooms.</p></li>
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-1.2c-1.4-.3-2.5-1.1-2.6-2.6h1.8c.1.8.7 1.3 1.9 1.3 1.3 0 1.6-.6 1.6-1 0-.6-.3-1.1-1.9-1.5-1.8-.4-3-1.1-3-2.6 0-1.2 1-2.1 2.2-2.4V6h2v1.1c1.3.3 2.1 1.2 2.2 2.4h-1.8c0-.7-.5-1.2-1.6-1.2-1 0-1.6.4-1.6 1 0 .5.4.9 1.9 1.3 1.5.4 3 1 3 2.8 0 1.3-1 2.1-2.2 2.4V17Z"/></svg></span>
+        <p>Coins, Peeks and Hints are game items. They have no money value and can't be cashed out.</p></li>
+      <li><span class="well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2 14.5v-9l6 4.5-6 4.5Z"/></svg></span>
+        <p>Ads are optional. You only get a reward when a video finishes.</p></li>
+    </ul>
+  </div>
+
+  <section class="raised">
+    <h2><span class="num">1</span>These terms</h2>
+    <p>These terms are an agreement between you and ASIANUT (&ldquo;we&rdquo;, &ldquo;us&rdquo;) about your use of the Flip Streak game for Android (&ldquo;the game&rdquo;). By installing or playing the game, you agree to them. If you don't agree, please don't use the game.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">2</span>The game</h2>
+    <p>Flip Streak is a pairs memory game. You flip cards to find matching pairs, build streaks, earn stars and unlock new levels and card modes. The game adjusts upcoming levels to how you play. You can also play in rooms with 2 to 6 friends. Solo play works offline; rooms, sign-in and ads need an internet connection.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">3</span>Who can play</h2>
+    <p>The game is meant for players aged 13 and over. If you are under the age of adulthood where you live, please make sure a parent or guardian agrees to these terms with you.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">4</span>Playing with friends</h2>
+    <ul>
+      <li>To use rooms you sign in with your Google account. Keep that account secure; you are responsible for play on it.</li>
+      <li>Your display name is shown to other players. Don't use a name that is offensive, hateful, sexual or pretends to be someone else. We may change or remove a name that breaks this rule.</li>
+      <li>Only share room codes with people you want to play with.</li>
+    </ul>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">5</span>Play fair</h2>
+    <p>Please don't:</p>
+    <ul>
+      <li>cheat, use bugs to your advantage, or use bots, scripts or modified versions of the game;</li>
+      <li>try to read hidden cards, change scores or interfere with our servers or other players' games;</li>
+      <li>copy, decompile or resell the game, except where the law allows it;</li>
+      <li>use the game for anything unlawful or to harass other players.</li>
+    </ul>
+    <p>If you break these rules, we may suspend or end your access to rooms and remove rewards you gained unfairly.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">6</span>Coins, Peeks and Hints</h2>
+    <ul>
+      <li>You earn coins by winning new stars and by watching optional reward videos, and you can spend them in the in-game store on Peeks and Hints.</li>
+      <li>Coins, Peeks, Hints and stars are virtual game items. They have no money value, can't be exchanged for money or anything outside the game, and can't be sold or transferred.</li>
+      <li>They are saved on your phone. They may be lost if you reset progress, clear the app's storage or uninstall, and we can't restore them.</li>
+      <li>We may change prices, rewards and how items work to keep the game balanced.</li>
+      <li>The game does not currently sell anything for real money. If we add purchases later, Google Play's terms will also apply to them.</li>
+    </ul>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">7</span>Ads and rewards</h2>
+    <ul>
+      <li>The game offers short reward videos from Google AdMob. Watching is always your choice.</li>
+      <li>You get the reward only when the video finishes. Closing it early gives no reward.</li>
+      <li>Videos aren't always available, and we don't promise any number of them. Reward limits apply, for example one refill per booster per level and one daily pack per day.</li>
+      <li>Don't use tricks to get rewards without watching, and don't click ads you aren't interested in.</li>
+    </ul>
+    <p>Ads are provided by Google and its partners. We don't control their content and aren't responsible for products or websites they advertise.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">8</span>Our content</h2>
+    <p>The game, including its design, artwork, levels, mascot and code, belongs to ASIANUT or our licensors. We give you a personal, non-exclusive, non-transferable, revocable licence to install and play the game on your own devices for non-commercial use. The Fredoka font is used under the SIL Open Font License and Material icons under the Apache License 2.0.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">9</span>Privacy</h2>
+    <p>Our <a href="flip-streak-privacy-policy.html">Privacy Policy</a> explains what the game does with your information. It forms part of these terms.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">10</span>Changes and availability</h2>
+    <p>We may update, change or remove features, levels or modes, and we may stop offering rooms or the game. We try to keep the game working, but it may sometimes be unavailable, for example during updates or if Google services are down.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">11</span>Disclaimer and liability</h2>
+    <p>The game is provided free, &ldquo;as is&rdquo; and &ldquo;as available&rdquo;. To the extent the law allows, we don't give any warranty that it will be error-free or uninterrupted, and we are not liable for indirect or consequential loss, or for lost progress, coins or items. Nothing in these terms limits liability that the law does not allow us to limit, such as liability for death or personal injury caused by our negligence.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">12</span>Your statutory rights</h2>
+    <p>We are a trader on Google Play. If you are a consumer in the European Union, the United Kingdom or elsewhere, you keep all the rights that consumer protection laws in your country give you. Nothing in these terms takes those rights away or limits them.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">13</span>Governing law</h2>
+    <p>These terms are governed by the laws of Uganda. Disputes will be handled by the courts of Uganda, unless the consumer laws of your country give you the right to bring a claim in your local courts or under your local law.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">14</span>Ending use</h2>
+    <p>You can stop playing at any time by uninstalling the game. To delete your player account for rooms, follow the steps in our <a href="flip-streak-privacy-policy.html">Privacy Policy</a>. If you break these terms, your right to use the game ends.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">15</span>Changes to these terms</h2>
+    <p>We may change these terms, for example when the game changes or the law requires it. We will post the new version on this page and update the effective date. If you keep playing after a change, the new terms apply.</p>
+  </section>
+
+  <section class="raised">
+    <h2><span class="num">16</span>Contact</h2>
+    <p>Questions about these terms: <a href="mailto:okellodeveloper@gmail.com">okellodeveloper@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <div class="btns">
+      <a class="btn primary" href="flip-streak-privacy-policy.html">Privacy Policy</a>
+      <a class="btn" href="index.html">ASIANUT apps</a>
+    </div>
+    <p>&copy; 2026 ASIANUT &middot; Flip Streak</p>
+  </footer>
+</main>
+</body>
+</html>
